@@ -141,4 +141,9 @@ export const api = {
     const response = await axios.get<ChatFullInfo>(`${BASE_URL}/tgapi/channel/info/${chatId}`);
     return response.data;
   },
+
+  async importChannels(channels: {link: string; cat_id: number}[]) {
+    const response = await axios.post(`${BASE_URL}/channels/bulk`, channels);
+    return response.data;
+  }
 };

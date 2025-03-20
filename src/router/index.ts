@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import ChannelsPage from '@/views/channels/ChannelsPage.vue';
 import CategoriesPage from '@/views/categories/CategoriesPage.vue';
 import DashboardPage from '@/views/dashboard/DashboardPage.vue';
+import ImportModule from '@/views/import/ImportModule.vue';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/categories',
     name: 'Categories',
     component: CategoriesPage,
+  },
+  {
+    path: '/import',
+    name: 'Import',
+    component: ImportModule,
   },
 ];
 
