@@ -6,14 +6,14 @@ export interface Channel {
   id: number;
   title: string;
   description: string;
-  category: number;
+  cat_id: number;
   link: string;
 }
 
 export interface CreateChannel {
   title: string;
   description: string;
-  category: number;
+  cat_id: number;
   link: string;
 }
 
@@ -136,7 +136,6 @@ export const api = {
     console.log(response.data);
   },
 
-  // Новый метод для проверки канала через Telegram API
   async checkChannel(chatId: string): Promise<ChatFullInfo> {
     const response = await axios.get<ChatFullInfo>(`${BASE_URL}/tgapi/channel/info/${chatId}`);
     return response.data;

@@ -23,7 +23,7 @@
 
         <n-form-item label="Категория" path="category">
           <n-select
-            v-model:value="formData.category"
+            v-model:value="formData.cat_id"
             :options="categoryOptions"
             placeholder="Выберите категорию"
           />
@@ -56,7 +56,7 @@ const formData = ref({
   id: 0,
   title: '',
   description: '',
-  category: 0,
+  cat_id: 0,
   link: '',
 });
 

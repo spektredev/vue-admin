@@ -104,7 +104,7 @@ const handleFileUpload = (files: UploadFileInfo[]) => {
           .filter(
             (channel) =>
               channel.link &&
-              isValidUrl(channel.link) && // Добавляем валидацию URL
+              // isValidUrl(channel.link) && // Добавляем валидацию URL
               !isNaN(channel.cat_id) &&
               channel.cat_id !== undefined
           );
@@ -165,7 +165,6 @@ const importChannels = async () => {
 
 <style scoped>
 .import-module {
-  max-width: 500px;
   margin: 20px auto;
 }
 
