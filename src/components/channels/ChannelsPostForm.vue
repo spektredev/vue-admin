@@ -23,7 +23,7 @@
 
         <n-form-item label="Категория" path="category">
           <n-select
-            v-model:value="formData.category"
+            v-model:value="formData.cat_id"
             :options="categoryOptions"
             placeholder="Выберите категорию"
           />
@@ -66,7 +66,7 @@ const handleCancel = () => {
 const formData = ref({
   title: '',
   description: '',
-  category: 0,
+  cat_id: 0,
   link: '',
 });
 
@@ -78,7 +78,7 @@ const loadCategories = () => {
    if (categoryOptions.value.length === 0) {
     categoryOptions.value.push({ label: 'Нет категорий', value: 0 });
   }
-  formData.value.category = categoryOptions.value[0].value;
+  formData.value.cat_id = categoryOptions.value[0].value;
 };
 
 
@@ -86,7 +86,7 @@ const handleSubmit = async () => {
   try {
     await api.createChannel(formData.value);
     showModal.value = false;
-    formData.value = {title: '', description: '', category: 0, link: '' };
+    formData.value = {title: '', description: '', cat_id: 0, link: '' };
     emit('channel-added');
   } catch (error) {
     console.error('Ошибка при создании канала:', error);

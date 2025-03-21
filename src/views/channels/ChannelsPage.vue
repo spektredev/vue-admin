@@ -37,7 +37,7 @@
           <td>{{ channel.id }}</td>
           <td>{{ channel.title }}</td>
           <td>{{ channel.description }}</td>
-          <td>{{ categoryName(channel.category) }}</td>
+          <td>{{ categoryName(channel.cat_id) }}</td>
           <td>{{ channel.link }}</td>
           <td>
             <n-button size="small" @click="openChannelEditForm(channel.id)">Редактировать</n-button>
