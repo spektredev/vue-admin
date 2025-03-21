@@ -86,6 +86,13 @@ export const api = {
     return response.data;
   },
 
+  async fetchChannelsPaginated(page: number, limit: number, sortBy?: string, sortOrder?: 'ASC' | 'DESC'): Promise<{ data: Channel[]; total: number }> {
+    const response = await axios.get<{ data: Channel[]; total: number }>(`${BASE_URL}/channels/paginated`, {
+      params: { page, limit, sortBy, sortOrder },
+    });
+    return response.data;
+  },
+
   async fetchSingleChannel(id: number): Promise<Channel> {
     const response = await axios.get<Channel>(`${BASE_URL}/channels/${id}`);
     return response.data;
@@ -141,8 +148,8 @@ export const api = {
     return response.data;
   },
 
-  async importChannels(channels: {link: string; cat_id: number}[]) {
+  async importChannels(channels: { link: string; cat_id: number }[]) {
     const response = await axios.post(`${BASE_URL}/channels/bulk`, channels);
     return response.data;
-  }
+  },
 };
